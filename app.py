@@ -108,4 +108,3 @@ if st.session_state.cache_key == (current_profile_id, leaderboard_input):
             "win_pct": st.column_config.NumberColumn("Win %", format="%.2f%%"),
         },
     )
-

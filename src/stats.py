@@ -76,4 +76,3 @@ def _extract_civ(member: dict[str, Any]) -> str:
     if isinstance(civilization, str) and civilization:
         return civilization
     return "unknown"
-

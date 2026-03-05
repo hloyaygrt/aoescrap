@@ -122,4 +122,3 @@ def fetch_rm_2v2_games(
             client.close()
 
     return games
-

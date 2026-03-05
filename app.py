@@ -73,7 +73,7 @@ if st.session_state.cache_key == (current_profile_id, leaderboard_input):
     patch_input = st.selectbox(
         "Patch",
         options=patch_options,
-        format_func=lambda value: "ALL" if value is None else str(value),
+        format_func=lambda value: "ALL" if value is None else "Latest",
     )
     selected_patch = patch_input
     filtered_games = [

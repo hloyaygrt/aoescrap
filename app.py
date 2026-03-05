@@ -11,6 +11,8 @@ from src.aoe4_api import (
 )
 from src.stats import build_opponent_civ_stats
 
+HARDCODED_PATCH = 8338
+
 
 st.set_page_config(page_title="AoE4 Opponent-Civ Stats", layout="wide")
 st.title("AoE4 Opponent-Civ Stats")
@@ -67,16 +69,11 @@ except ValueError:
 
 if st.session_state.cache_key == (current_profile_id, leaderboard_input):
     games = st.session_state.games_cache
-    patch_values = sorted(
-        {game["patch"] for game in games if isinstance(game.get("patch"), int)},
-        reverse=True,
-    )
-    latest_patch = patch_values[0] if patch_values else None
-    patch_options: list[int | None] = [None] if latest_patch is None else [None, latest_patch]
+    patch_options: list[int | None] = [None, HARDCODED_PATCH]
     patch_input = st.selectbox(
         "Patch",
         options=patch_options,
-        format_func=lambda value: "ALL" if value is None else f"Latest ({value})",
+        format_func=lambda value: "ALL" if value is None else str(value),
     )
     selected_patch = patch_input
     filtered_games = [

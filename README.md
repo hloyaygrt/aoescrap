@@ -28,7 +28,7 @@ python3 -m streamlit run app.py
 3. Click **Fetch games**.
 4. Select `Patch`:
    - `ALL`
-   - `Latest (<patch>)` auto-detected from fetched games
+   - `8338` (hardcoded latest for now)
 5. Review metrics and the per-civ table:
    - `encounters`: how many enemy slots used that civ against you
    - `wins` / `losses`: your outcomes in those encounters
